@@ -23,3 +23,37 @@ author: GabrielMreira, Redror
 [@Redror](https://github.com/Redror)
 
 <!-- @include: ../../../includes/seminario-1-Redror/README.md -->
+## Salvador
+
+```mermaid
+classDiagram
+    class  PrototipoInimigo {
+        +clone():  PrototipoInimigo
+        + getSaude(): int
+        +setsaude(saude: int): void
+        + getPoderDeAtaque(): int
+        +setPoderDeAtaque(PoderDeAtaque: int): void
+    }
+
+    class Goblin {
+        -saude: int
+        -PoderDeAtaque: int
+        +clone(): Goblin
+        + getSaude(): int
+        +setsaude(saude: int): void
+        + getPoderDeAtaque(): int
+        +setPoderDeAtaque(PoderDeAtaque: int): void
+    }
+
+    class Orc {
+        -saude: int
+        -PoderDeAtaque: int
+        +clone(): Orc
+        + getSaude(): int
+        +setsaude(saude: int): void
+        + getPoderDeAtaque(): int
+        +setPoderDeAtaque(PoderDeAtaque: int): void
+    }
+
+     PrototipoInimigo <|-- Goblin
+     PrototipoInimigo <|-- Orc
