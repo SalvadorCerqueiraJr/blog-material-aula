@@ -65,3 +65,33 @@ public enum Configuracao {
     
 }
 ```
+
+
+
+
+
+## Salvador
+
+
+```mermaid
+classDiagram
+    class DatabaseConnection {
+        -name: String
+        +getInstance(name: String): DatabaseConnection
+        +query(sql: String): ResultSet
+    }
+
+    class ConnectionManager {
+        -instances: Map<String, DatabaseConnection>
+        +getInstance(name: String): DatabaseConnection
+    }
+
+    ConnectionManager o-- DatabaseConnection : manages
+```
+### **Descrição do Diagrama**
+
+1. **DatabaseConnection**: Representa a classe para as conexões com o banco de dados. Inclui o método `getInstance(name: String)` para obter uma instância da conexão associada a um nome específico. O método `query(sql: String)` é um exemplo de operação que a conexão pode realizar.
+  
+2. **ConnectionManager**: Gerencia as instâncias das conexões. Mantém um mapa (ou dicionário) das instâncias de `DatabaseConnection` associadas a diferentes nomes. O método `getInstance(name: String)` permite obter a instância correta com base no nome.
+
+
