@@ -23,3 +23,12 @@ author: GuiSamp, RiansFonseca
 
 <!-- @include: ../../../includes/seminario-1-RiansFonseca/README-SINGLETON.md -->
 
+## Salvador 
+
+![image](https://github.com/user-attachments/assets/1d28940d-5ec0-4bbb-96d0-7bc39b1794f2)
+
+* Descrição:
+* Logger é a classe Singleton para gerenciar registros de log.
+* O atributo estático instance armazena a única instância da classe.
+* O método getInstance() fornece acesso à instância única.
+* log() é um método para registrar mensagens de log.
