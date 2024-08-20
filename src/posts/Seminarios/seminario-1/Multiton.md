@@ -65,3 +65,17 @@ public enum Configuracao {
     
 }
 ```
+
+## Salvador
+```java
+class DatabaseConnection {
+    - id: String
+    - DatabaseConnection(id: String)
+    + getId(): String
+    + connect(): void
+    + getInstance(id: String): DatabaseConnection
+}
+
+DatabaseConnection : +instances : Map<String, DatabaseConnection>
+```
+
