@@ -115,3 +115,49 @@ PizzaBuilder --> Pizza : build()
 ```
 <figcaption> Exemplo de builder </figcaption>
 </figure>
+
+
+
+## Salvador
+
+```@startuml
+class Carro {
+    - motor: String
+    -  Transmissao: String
+    - color: String
+    - doors: int
+    + setmotor(motor: String): void
+    + setTransmissao( Transmissao: String): void
+    + setColor(color: String): void
+    + setDoors(doors: int): void
+    + toString(): String
+}
+
+interface CarroBuilder {
+    + buildmotor(): void
+    + buildTransmissao(): void
+    + buildColor(): void
+    + buildDoors(): void
+    + getCar():Carro
+}
+
+class CarroEsportivoBuilder {
+    -Carro:Carro
+    + buildmotor(): void
+    + buildTransmissao(): void
+    + buildColor(): void
+    + buildDoors(): void
+    + getCar():Carro
+}
+
+class CarroDirector {
+    - builder:CarroBuilder
+    +CarroDirector(builder:CarroBuilder)
+    + constructCar(): void
+}
+
+CarBuilder <|-- CarroEsportivoBuilder
+CarDirector -->CarroBuilder
+CarDirector -->Carro
+CarroEsportivoBuilder -->Carro
+@enduml
