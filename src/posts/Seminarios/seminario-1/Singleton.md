@@ -23,3 +23,26 @@ author: GuiSamp, RiansFonseca
 
 <!-- @include: ../../../includes/seminario-1-RiansFonseca/README-SINGLETON.md -->
 
+@startuml
+class User {
+    - username: String
+    - password: String
+    + login(): Boolean
+}
+
+class Admin {
+    + createUser(): void
+}
+
+User <|-- Admin
+@enduml
+
+## Salvador
+
+``` @startuml
+public class CoffeeMachine {
+    private static CoffeeMachine instance;
+    private CoffeeMachine();
+    public static CoffeeMachine getInstance();
+    public void makeCoffee();
+}
