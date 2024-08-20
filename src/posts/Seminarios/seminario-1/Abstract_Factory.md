@@ -79,3 +79,54 @@ MagoFactory --> Cajado : cria >
 
 ```
 </figure>
+
+
+## Salvador
+
+@startuml
+interface Button {
+    + render(): void
+}
+
+interface TextField {
+    + render(): void
+}
+
+class WindowsButton implements Button {
+    + render(): void
+}
+
+class WindowsTextField implements TextField {
+    + render(): void
+}
+
+class MacButton implements Button {
+    + render(): void
+}
+
+class MacTextField implements TextField {
+    + render(): void
+}
+
+interface GUIFactory {
+    + createButton(): Button
+    + createTextField(): TextField
+}
+
+class WindowsFactory implements GUIFactory {
+    + createButton(): Button
+    + createTextField(): TextField
+}
+
+class MacFactory implements GUIFactory {
+    + createButton(): Button
+    + createTextField(): TextField
+}
+
+Button <|-- WindowsButton
+Button <|-- MacButton
+TextField <|-- WindowsTextField
+TextField <|-- MacTextField
+GUIFactory <|-- WindowsFactory
+GUIFactory <|-- MacFactory
+@enduml
