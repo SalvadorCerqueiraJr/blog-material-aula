@@ -23,3 +23,12 @@ author: GuiSamp, RiansFonseca
 
 <!-- @include: ../../../includes/seminario-1-RiansFonseca/README-SINGLETON.md -->
 
+## Salvador
+
+``` @startuml
+public class CoffeeMachine {
+    private static CoffeeMachine instance;
+    private CoffeeMachine();
+    public static CoffeeMachine getInstance();
+    public void makeCoffee();
+}
