@@ -23,3 +23,30 @@ author: GabrielMreira, Redror
 [@Redror](https://github.com/Redror)
 
 <!-- @include: ../../../includes/seminario-1-Redror/README.md -->
+
+## Salvador
+
+```@startuml
+interface PersonagemPrototype {
+    + clone(): Prototype
+}
+
+class Guerreiro {
+    - name: String
+    + Guerreiro(name: String)
+    + setName(name: String): void
+    + getName(): String
+    + clone(): Prototype
+}
+
+class Mago {
+    - name: String
+    + Mago(name: String)
+    + setName(name: String): void
+    + getName(): String
+    + clone(): Prototype
+}
+
+PersonagemPrototype <|-- Guerreiro
+PersonagemPrototype <|-- Mago
+@enduml
