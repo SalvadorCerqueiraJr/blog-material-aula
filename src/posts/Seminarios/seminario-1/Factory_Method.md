@@ -75,3 +75,42 @@ ExcelRelatorioFactory --> RelatorioEmExcel : creates >
 ```
 
 </figure>
+
+<figure>
+
+```plantuml
+
+@startuml
+interface Vehicle {
+    + drive(): void
+}
+
+class Car implements Vehicle {
+    + drive(): void
+}
+
+class Motorcycle implements Vehicle {
+    + drive(): void
+}
+
+abstract class VehicleFactory {
+    + createVehicle(): Vehicle
+}
+
+class CarFactory extends VehicleFactory {
+    + createVehicle(): Vehicle
+}
+
+class MotorcycleFactory extends VehicleFactory {
+    + createVehicle(): Vehicle
+}
+
+Vehicle <|-- Car
+Vehicle <|-- Motorcycle
+VehicleFactory <|-- CarFactory
+VehicleFactory <|-- MotorcycleFactory
+@enduml
+
+```
+
+</figure>
